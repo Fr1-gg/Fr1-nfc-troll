@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fr1-nfc-troll</title>
+  <style>
+    /* Основные стили для страницы */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;  /* Центрируем все элементы по вертикали */
+      align-items: center;      /* Центрируем все элементы по горизонтали */
+      background-color: #d3d3d3; /* Серый фон */
+    }
+
+    /* Стили для верхней панели */
+    .top-bar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+    }
+
+    .top-bar img {
+      height: 30px;
+    }
+
+    .top-bar span {
+      font-size: 14px;
+      color: #00bfff; /* Голубой цвет для текста */
+    }
+
+    /* Стили для центральной кнопки */
+    .center-button {
+      padding: 20px 40px;
+      font-size: 20px;
+      background-color: red; /* Красный фон для кнопки */
+      color: white;
+      border: 2px solid white; /* Белая обводка */
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 30px; /* Отступ снизу для картинки */
+    }
+
+    .center-button:hover {
+      background-color: darkred; /* Темно-красный цвет при наведении */
+    }
+
+    /* Стили для второй картинки */
+    .bottom-image {
+      width: 300px; /* Размер картинки, можно подкорректировать */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Верхняя панель с картинкой и текстом -->
+  <div class="top-bar">
+    <img src="image.jpg" alt="Logo">
+    <span>сайт от fr1</span>
+  </div>
+
+  <!-- Центральная кнопка -->
+  <button class="center-button" id="clickButton">Нажми на меня</button>
+
+  <!-- Вторая картинка, которая будет расположена ниже кнопки -->
+  <img src="image2.jpg" alt="Second Image" class="bottom-image" id="bottomImage">
+
+  <!-- Аудиофайл для воспроизведения -->
+  <audio id="audio" src="sound.mp3"></audio>
+
+  <script>
+    // Получаем элементы на странице
+    const button = document.getElementById('clickButton');
+    const audio = document.getElementById('audio');
+    const bottomImage = document.getElementById('bottomImage'); // Вторая картинка
+
+    // Обработчик нажатия на кнопку
+    button.addEventListener('click', function() {
+      audio.play(); // Воспроизведение звука
+      bottomImage.src = 'image3.jpg'; // Меняем картинку на новую (image3.jpg)
+    });
+  </script>
+</body>
+</html>
